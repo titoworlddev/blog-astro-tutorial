@@ -1,23 +1,17 @@
 ---
+import Layout from '../layouts/layout.astro';
+const pageTitle = 'Mi blog de Astro aprendizaje';
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <title>Blog Page</title>
-  </head>
-  <body>
-    <a href='/'>Inicio</a>
-    <a href='/about'>About</a>
-    <a href='/blog'>Blog</a>
+<Layout title={pageTitle}>
+  <h1>{pageTitle}</h1>
+  <h2>o algo parecido...</h2>
 
-    <h1>Esta es mi pagina de blog</h1>
-    <h2>o algo parecido...</h2>
+  <p>Aqui voy a postear todo lo que voy aprendiendo en el tutorial de Astro</p>
 
-    <p>
-      Aqui voy a postear todo lo que voy aprendiendo en el tutorial de Astro
-    </p>
-  </body>
-</html>
+  <ul>
+    <li><a href='/posts/post-1'>Post 1</a></li>
+    <li><a href='/posts/post-2'>Post 2</a></li>
+    <li><a href='/posts/post-3'>Post 3</a></li>
+  </ul>
+</Layout>
