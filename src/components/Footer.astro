@@ -1,12 +1,19 @@
 ---
+import Social from './Social.astro';
 const platform = 'github';
 const username = 'titoworlddev';
 ---
 
 <footer>
-  <p>
-    Más información sobre mis proyectos en <a
-      href={`https://www.${platform}.com/${username}`}>{platform}</a
-    >!
-  </p>
+  <Social platform={platform} username={username} />
+  <Social platform='linkedin' username='in/cristian-arias-mejuto/' />
+  <Social platform='instagram' username='cristian_am91' />
 </footer>
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
