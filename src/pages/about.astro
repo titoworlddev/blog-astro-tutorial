@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = 'Sobre mi';
 
 const identity = {
@@ -36,7 +36,7 @@ const fontWeight = 'bold';
 const textCase = 'uppercase';
 ---
 
-<Layout title={pageTitle}>
+<BaseLayout title={pageTitle}>
   <h1>{pageTitle}</h1>
   <h2>Hecho con Astro...</h2>
 
@@ -83,7 +83,7 @@ const textCase = 'uppercase';
       <p>Mi objetivo no son 3 días.</p>
     )
   }
-</Layout>
+</BaseLayout>
 
 <style define:vars={{ skillColor, fontWeight, textCase }}>
   h1 {

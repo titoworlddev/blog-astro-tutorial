@@ -1,29 +1,25 @@
 ---
-import '../styles/global.css';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-const { title } = Astro.props;
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+const { pageTitle } = Astro.props;
 ---
 
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
-    <link rel='shortcut icon' href='/favicon.svg' type='image/svg-xml' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <Header />
-
+    <h1>{pageTitle}</h1>
     <slot />
-
     <Footer />
-
     <script>
       import '../scripts/menu.js';
     </script>
-    {/* Tambien se puede hacer asi */}
-    {/* <!-- <script src='../scripts/menu.js'></script> --> */}
   </body>
 </html>

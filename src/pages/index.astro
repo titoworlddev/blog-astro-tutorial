@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/layout.astro';
-const pageTitle = 'Página de inicio';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = 'Home Page';
 ---
 
-<Layout title={pageTitle}>
-  <h1>{pageTitle}</h1>
-</Layout>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Mi impresionante subtítulo del blog</h2>
+</BaseLayout>
