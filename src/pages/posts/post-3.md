@@ -1,9 +1,10 @@
 ---
+layout: '../../layouts/MarkdownPostLayout.astro'
 title: Mi tercer post en el blog
 author: Astro alumno
 description: 'Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho.'
 image:
-  url: 'https://astro.build/assets/blog/community-day/cover.jpg'
+  url: 'https://astro.build/_astro/cover.8c80c458.webp'
   alt: 'La palabra comunidad con corazón.'
 pubDate: 2022-07-15
 tags: ['astro', 'aprender en público', 'contratiempos', 'comunidad']
