@@ -9,9 +9,16 @@ const { frontmatter } = Astro.props;
     Publicado el: {frontmatter.pubDate.slice(0, 10)} por {frontmatter.author}
   </p>
   <img src={frontmatter.image.url} alt={frontmatter.image.alt} width='300' />
-  <p class='tags'>
-    {frontmatter.tags.map(tag => `#${tag}`).join(' ')}
-  </p>
+  <ul class='tags'>
+    {
+      frontmatter.tags &&
+        frontmatter.tags.map(tag => (
+          <li>
+            <a href={`/tags/${tag}`}>#{tag}</a>
+          </li>
+        ))
+    }
+  </ul>
 
   <hr />
 
@@ -20,8 +27,11 @@ const { frontmatter } = Astro.props;
 
 <style>
   .tags {
+    list-style: none;
+    margin: 0;
+    padding-left: 8px;
     display: flex;
+    gap: 16px;
     flex-wrap: wrap;
-    margin-top: 8px;
   }
 </style>
