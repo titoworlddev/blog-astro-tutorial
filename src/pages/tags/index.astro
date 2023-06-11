@@ -1,27 +1,25 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-const { frontmatter } = Astro.props;
+import BlogPost from '../../components/BlogPost.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const pageTitle = 'Tag Index';
+
+const allPosts = await Astro.glob('../posts/*.md');
+
+const uniqueTags = [
+  ...new Set(allPosts.flatMap(post => post.frontmatter.tags || []))
+];
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
-  <h3><em>{frontmatter.description}</em></h3>
-  <p>
-    Publicado el: {frontmatter.pubDate.slice(0, 10)} por {frontmatter.author}
-  </p>
-  <img src={frontmatter.image.url} alt={frontmatter.image.alt} width='300' />
+<BaseLayout pageTitle={pageTitle}>
   <div class='tags'>
     {
-      frontmatter.tags.map(tag => (
+      uniqueTags.map(tag => (
         <p class='tag'>
           <a href={`/tags/${tag}`}>{tag}</a>
         </p>
       ))
     }
   </div>
-
-  <hr />
-
-  <slot />
 </BaseLayout>
 
 <style>
