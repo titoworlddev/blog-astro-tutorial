@@ -1,7 +1,35 @@
 ---
-const { url, title } = Astro.props;
+const { url, title, image } = Astro.props;
 ---
 
 <li>
-  <a href={url}>{title}</a>
+  <a href={url}>
+    <img src={image.url} alt={image.alt} />
+    <p>
+      {title}
+    </p>
+  </a>
 </li>
+
+<style>
+  li {
+    width: 80%;
+    margin-bottom: 1rem;
+    background: rgb(209, 209, 209);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  li a img {
+    object-fit: cover;
+    vertical-align: top;
+    width: 100%;
+    height: 150px;
+  }
+  li a p {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+  }
+</style>

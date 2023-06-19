@@ -14,8 +14,22 @@ const pageTitle = 'Mi blog de Astro aprendizaje';
   <ul>
     {
       allPosts.map(post => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          image={post.frontmatter.image}
+        />
       ))
     }
   </ul>
 </BaseLayout>
+
+<style>
+  ul {
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0 2rem;
+  }
+</style>
