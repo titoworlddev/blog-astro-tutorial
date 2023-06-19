@@ -77,3 +77,16 @@ a:focus {
     padding: 15px 20px;
   }
 }
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
+.greeting button {
+  cursor: pointer;
+}
